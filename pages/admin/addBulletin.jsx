@@ -6,21 +6,36 @@ const addBulletin = () => {
           <h1 className="px-7 text-left py-3 h-fit w-fit bg-orange-400 rounded-t-lg text-xl font-bold text-white">
             ADMIN: Add Bulletin
           </h1>
-          <form className="p-10 bg-black/25 items-start" onSubmit={(e) => e.preventDefault()}>
+          <form
+            action="http://localhost:5000/addBulletin"
+            encType="multipart/form-data"
+            method="POST"
+            className="p-10 bg-black/25 items-start"
+          >
             <h2 className="px-2 text-left font-sans text-xl text-white font-semibold max-w-fit">
               Title
             </h2>
-            <input className="containinput" placeholder="Enter bulletin title" type="text" />
+            <input
+              name="title"
+              className="containinput"
+              placeholder="Enter bulletin title"
+              type="text"
+            />
             <h2 className=" px-2 text-left font-sans text-xl text-white font-semibold max-w-fit">
               Description
             </h2>
-            <textarea className="containinput1" placeholder="Enter bulletin description" />
+            <textarea
+              name="description"
+              className="containinput1"
+              placeholder="Enter bulletin description"
+            />
             <h2 className="px-2 text-left font-sans text-xl text-white font-semibold max-w-fit">
               Upload Circular
             </h2>
             <input
               className="text-white border-white border-2 border-dashed px-64 py-8 m-4 bg-black/25 rounded-xl"
               type="file"
+              name="file"
             />{" "}
             <br />
             <input

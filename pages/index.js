@@ -1,9 +1,23 @@
 import Head from "next/head"
-import Image from "next/image"
-import { demoData } from "@/demoData"
 import BulletinCard from "@/components/BulletinCard"
+import { useEffect, useState } from "react"
 
 export default function Home() {
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    const data = fetch("http://localhost:5000/bulletins", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+      })
+  }, [data])
+
   return (
     <div className='h-full text-center items-center justify-between max-w-full p-10 bg-[url("/imageb.png")]'>
       <Head>
@@ -17,17 +31,17 @@ export default function Home() {
           Updates / News
         </h1>
 
-      <div className="max-w-6xl space-y-8 bg-black/25 p-12 rounded-b-xl rounded-tr-xl">
-          {demoData.map((data) => (
-            <BulletinCard
-              key={data.id}
-              title={data.title}
-              description={data.description}
-              file={data.file}
-            />
-          ))}
+        <div className="max-w-6xl space-y-8 bg-black/25 p-12 rounded-b-xl rounded-tr-xl">
+          {data &&
+            data.map((data) => (
+              <BulletinCard
+                key={data.id}
+                title={data.title}
+                description={data.description}
+                file={data.file}
+              />
+            ))}
         </div>
-
       </div>
     </div>
   )
