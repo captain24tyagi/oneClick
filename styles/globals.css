@@ -15,4 +15,16 @@
     .containinput2{
         @apply m-10 outline-none bg-black/40 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-blue-200 placeholder-gray-100 
     }
+
+    .containinput3{
+        @apply mt-7 mb-10 outline-none bg-black/40 rounded-md border w-full font-sans font-medium px-7 py-5 border-[white] border-dashed text-blue-200 placeholder-gray-100 
+    }
+
+    .containinput4{
+        @apply m-10 outline-none bg-blue-600  hover:bg-blue-800 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-white placeholder-gray-100
+    }
+
+    .containinput5{
+        @apply m-10 outline-none bg-orange-400 hover:bg-orange-600 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-white placeholder-gray-100
+    }
 }
