@@ -71,7 +71,7 @@ app.post("/addOd", upload.single("file"), async (req, res) => {
     from,
     to,
   })
-  res.json(od)
+  res.redirect("http://localhost:3000/studentDashboard")
 })
 
 // ML
@@ -94,10 +94,15 @@ app.post("/addMl", upload.single("file"), async (req, res) => {
   }
 })
 
+app.get("/viewodMls", upload.single("file"), async (req, res) => {
+  const odMls = await ODML.find()
+  res.json(odMls)
+})
+
 app.post("/viewOdMl", async (req, res) => {
   try {
     const { netId } = req.body
-    const odml = ODML.find({ netId })
+    const odml = await ODML.find({ netId })
     res.json(odml)
   } catch (error) {
     console.error(error)

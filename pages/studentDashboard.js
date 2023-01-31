@@ -1,7 +1,27 @@
 import DashboardCard from "@/components/DashboardCard"
-import React from "react"
+import React, { useEffect, useState } from "react"
 
-function FacultyDashboard(props) {
+function studentDashboard() {
+  const [odMl, setOdMl] = useState(null)
+  useEffect(() => {
+    const data = { netId: "dadsd" }
+
+    fetch("http://localhost:5000/viewOdMl", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data)
+        setOdMl(data)
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
+  }, [])
   return (
     <div className='h-full bg-[url("/imageb.png")]'>
       <div className=" flex-1 max-w-6xl mx-auto p-10">
@@ -11,13 +31,17 @@ function FacultyDashboard(props) {
 
         <div>
           <div className=" bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll ">
-            <DashboardCard
-              name="Soumil"
-              title="Attending A Conference"
-              type="OD"
-              filename="Loda.png "
-              desc="bgfvytfuyguyfufu6f"
-            />
+            {odMl &&
+              odMl.map((data) => (
+                <DashboardCard
+                  key={data._id}
+                  netId={data.netId}
+                  title={data.title}
+                  type={data.type}
+                  file={data.file}
+                  description={data.description}
+                />
+              ))}
           </div>
         </div>
       </div>
@@ -25,4 +49,4 @@ function FacultyDashboard(props) {
   )
 }
 
-export default FacultyDashboard
+export default studentDashboard

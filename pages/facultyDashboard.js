@@ -1,7 +1,7 @@
 import DashboardCard from "@/components/DashboardCard"
 import React from "react"
 
-function facultyDashboard(props) {
+function facultyDashboard() {
   return (
     <div className='min-h-screen bg-[url("/imageb.png")]'>
       <div className=" flex-1 max-w-6xl mx-auto p-10">
