@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+
+    .containinput{
+        @apply mt-7 mb-10 outline-none bg-black/40 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-blue-200 placeholder-gray-100 
+    }
+
+    .containinput1{
+        @apply mt-7 mb-10 h-60 outline-none bg-black/40 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-blue-200 placeholder-gray-100 
+    }
+
+    .containinput2{
+        @apply m-10 outline-none bg-black/40 rounded-md border-b w-full font-sans font-medium px-7 py-5 border-[black] text-blue-200 placeholder-gray-100 
+    }
+}
