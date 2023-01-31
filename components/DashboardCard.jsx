@@ -16,7 +16,7 @@ function DashboardCard(props) {
         </div>
 
         <div className='flex w-[280px] bg-black/25 h-[150px]  pb-10 m-auto rounded-t-lg rounded-b-lg'>
-            <p className='text-white overflow-hidden p-3'>{props.desc}</p>
+            <p className='text-white overflow-hidden p-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. At velit voluptas rerum. Doloribus delectus molestiae deserunt facere id accusamus placeat illo quaerat nisi incidunt aspernatur, dolores facilis alias adipisci fugit?</p>
         </div>
 
         <div className='mt-2 px-7 py-3 text-left'>
