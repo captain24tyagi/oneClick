@@ -15,14 +15,14 @@ function DashboardCard(props) {
             <h1 className='text-white font-[90px] text-[23px] tracking-[1px]'>Description </h1>
         </div>
 
-        <div className='flex w-[280px] bg-black/25 h-[150px] pb-10 m-auto rounded-t-lg rounded-b-lg'>
-            <p className='text-white overflow-hidden p-3'>{props.desc}</p>
+        <div className='flex w-[280px] bg-black/25 h-[150px]  pb-10 m-auto rounded-t-lg rounded-b-lg'>
+            <p className='text-white break-all overflow-hidden p-3'>{props.desc}</p>
         </div>
 
         <div className='mt-2 px-7 py-3 text-left'>
             <h1 className='text-white font-[90px] text-[23px] tracking-[1px]'>Proof </h1>
         </div>
-
+ 
         <div className='flex w-[280px] bg-black/25 h-[50px]  pb-10 m-auto rounded-t-lg rounded-b-lg '>
            <button className='flex  bg-white h-[30px] w-[90px] rounded-t-lg rounded-b-lg m-2.5' >
                 <h2 className='text-gray-500 text-[10px] m-auto p-1'>{props.filename}</h2>                

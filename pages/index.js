@@ -39,6 +39,7 @@ export default function Home() {
                 title={data.title}
                 description={data.description}
                 file={data.file}
+                createdAt={data.createdAt}
               />
             ))}
         </div>
