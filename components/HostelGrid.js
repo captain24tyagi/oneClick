@@ -1,9 +1,12 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 // import Electricity.png from "./public"
 
 function HostelGrid() {
-  return (
+
+    // const [title,setTitle] = useState('');
+
+    return (
     <div className='min-h-screen bg-[url("/imageb.png")]'>
 
         <div className=' flex-1 max-w-6xl mx-auto p-10'>
@@ -11,24 +14,24 @@ function HostelGrid() {
             Hostel Facility Grievances
         </h1>
 
-        <div className=' bg-black/25 min-h-screen rounded-t-lg p-10'>
+        <div className=' bg-black/25 min-h-300 rounded-t-lg p-10 '>
             <div className='flex flex-row'>
                 <div className='flex flex-col'>
                     <div className='flex'>
                         <div>
-                            <img src="/Electricity.png" width={440}/>
+                            <img src="/Electricity.png" width={440} className="hover:animate-pulse"/>
                         </div>
                         <div>
-                            <img src="/Laundry.png" />
-                            <img src = "/Internet.png"/>
+                            <img src="/Laundry.png" className="hover:animate-pulse"/>
+                            <img src = "/Internet.png" className="hover:animate-pulse"/>
                         </div>
                     </div>
                     <div>
-                        <img src = "/Food.png"/>
+                        <img src = "/Food.png" className="hover:animate-pulse"/>
                     </div>
                 </div>
                 <div>
-                    <img width={510} src="/House-Keeping.png" />
+                    <img width={510} src="/House-Keeping.png" className="hover:animate-pulse"  />
                 </div>
             </div>
         </div>
