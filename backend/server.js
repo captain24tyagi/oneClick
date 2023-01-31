@@ -35,7 +35,7 @@ app.post("/addBulletin", upload.single("file"), async (req, res) => {
   try {
     const { title, description } = req.body
     const bulletin = await BulletinBoard.create({ title, description, file: req.file.filename })
-    res.json({ bulletin })
+    res.redirect("http://localhost:3000/")
   } catch (e) {
     console.error(e.message)
     res.status(400).json({ error: e.message })
