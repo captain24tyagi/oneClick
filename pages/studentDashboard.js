@@ -15,7 +15,7 @@ function FacultyDashboard(props) {
               name="Soumil"
               title="Attending A Conference"
               type="OD"
-              filename="sarthakRandi.png "
+              filename="Loda.png "
               desc="bgfvytfuyguyfufu6f"
             />
           </div>
