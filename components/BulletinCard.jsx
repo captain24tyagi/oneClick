@@ -7,7 +7,7 @@ const BulletinCard = (props) => {
           View Circular
         </a>
       </div>
-      <p className="text-blue-500 font-medium text-lg">{props.description}</p>
+      <p className="text-blue-500 font-medium text-lg max-w-[650px]">{props.description}</p>
     </div>
   )
 }
