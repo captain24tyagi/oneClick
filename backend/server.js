@@ -94,6 +94,17 @@ app.post("/addMl", upload.single("file"), async (req, res) => {
   }
 })
 
+app.post("/viewOdMl", async (req, res) => {
+  try {
+    const { netId } = req.body
+    const odml = ODML.find({ netId })
+    res.json(odml)
+  } catch (error) {
+    console.error(error)
+    res.status(400).json(error)
+  }
+})
+
 app.post("/approve", async (req, res) => {
   const { id } = req.body
   await ODML.findByIdAndUpdate(id, { ciApproved: true })
