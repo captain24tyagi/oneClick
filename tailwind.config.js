@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        'mavericks': "url('/imageb.png')",
+        'mavericks' : "url('')",
       }
     },
   },

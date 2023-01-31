@@ -9,11 +9,14 @@ function FacultyDashboard(props) {
                 Faculty Approval Dashboard
             </h1>
 
-            <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7'>
-                <DashboardCard title = "Soumil"/>
-                <DashboardCard title = "Sarthak"/>
-                <DashboardCard title = "Ari"/>
+            <div>
+                <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll'>
+                    <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD"/>
+                    <DashboardCard name = "Sarthak" title = "Severe Case of Asthma" type="ML"/>
+                    <DashboardCard  name= "Ari" title= "Wiring Issues" type="HG"/>
+                    <DashboardCard  name= "Ari" title= "Wiring Issues" type="HG"/>
 
+                </div>
             </div>
         </div>
     </div>
