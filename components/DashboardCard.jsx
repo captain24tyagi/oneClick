@@ -8,7 +8,7 @@ function DashboardCard(props) {
             <h1 className=' px-7  py-3 w-[230px] text-center bg-blue-500 text-xl font-bold text-white'>{props.name}</h1>
         </div>
 
-        <div className='mt-2 p-5 mb-3 text-left'>
+        <div className='mt-2 p-6 mb-3 text-left'>
             <h1 className='text-white font-medium text-[23px] tracking-[1px] '>{props.title}</h1>
         </div>
         <div className='mt-2 px-7 py-3 text-left'>
