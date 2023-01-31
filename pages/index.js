@@ -16,7 +16,7 @@ export default function Home() {
       .then((data) => {
         setData(data)
       })
-  }, [data])
+  }, [])
 
   return (
     <div className='h-full text-center items-center justify-between max-w-full p-10 bg-[url("/imageb.png")]'>

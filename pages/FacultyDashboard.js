@@ -11,8 +11,8 @@ function FacultyDashboard(props) {
             </h1>
 
             <div>
-                <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll'>
-                    <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD" filename= 'RR.png ' desc='nuiyguihjiogi8y8ih'/>
+                <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 scrollbar scrollbar-track-black/20 scrollbar-thumb-[#93C5FD]'>
+                    <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD" filename= 'RR.png ' desc='nuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ih'/>
                     <DashboardCard name = "Sarthak" title = "Severe Case of Asthma" type="ML" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
                     <DashboardCard  name= "Aritra" title= "Wiring Issues" type="HG" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
                     <DashboardCard  name= "Nikhil" title= "Wiring Issues" type="HG" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
