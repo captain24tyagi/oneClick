@@ -12,10 +12,10 @@ function FacultyDashboard(props) {
 
             <div>
                 <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll'>
-                    <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD" filename= 'sarthakRandi.png ' desc='bgfvytfuyguyfufu6f'/>
-                    <DashboardCard name = "Sarthak" title = "Severe Case of Asthma" type="ML" filename= 'sarthakRandi.png' desc='bgfvytfuyguyfufu6f'/>
-                    <DashboardCard  name= "Ari" title= "Wiring Issues" type="HG" filename= 'sarthakRandi.png' desc='bgfvytfuyguyfufu6f'/>
-                    <DashboardCard  name= "Ari" title= "Wiring Issues" type="HG" filename= 'sarthakRandi.png' desc='bgfvytfuyguyfufu6f'/>
+                    <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD" filename= 'RR.png ' desc='nuiyguihjiogi8y8ih'/>
+                    <DashboardCard name = "Sarthak" title = "Severe Case of Asthma" type="ML" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
+                    <DashboardCard  name= "Aritra" title= "Wiring Issues" type="HG" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
+                    <DashboardCard  name= "Nikhil" title= "Wiring Issues" type="HG" filename= 'RR.png' desc='bgfvytfuyguyfufu6f'/>
 
                 </div>
             </div>
