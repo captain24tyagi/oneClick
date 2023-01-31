@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 // import Electricity.png from "./public"
 
@@ -19,19 +20,29 @@ function HostelGrid() {
                 <div className='flex flex-col'>
                     <div className='flex'>
                         <div>
+                            <Link href='/electricity'>
                             <img src="/Electricity.png" width={440} className="hover:animate-pulse"/>
+                            </Link>
                         </div>
                         <div>
+                           <Link href='/laundry'>
                             <img src="/Laundry.png" className="hover:animate-pulse"/>
+                            </Link>
+                            <Link href='/internet'>
                             <img src = "/Internet.png" className="hover:animate-pulse"/>
+                           </Link>
                         </div>
                     </div>
                     <div>
+                        <Link href='/food'>
                         <img src = "/Food.png" className="hover:animate-pulse"/>
+                        </Link>
                     </div>
                 </div>
                 <div>
-                    <img width={510} src="/House-Keeping.png" className="hover:animate-pulse"  />
+                    <Link href='/housekeeping'>
+                    <img width={510} src="/House-Keeping.png" className="hover:animate-pulse"  />  
+                    </Link>
                 </div>
             </div>
         </div>

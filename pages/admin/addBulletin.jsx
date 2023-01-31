@@ -24,7 +24,7 @@ const addBulletin = () => {
             />{" "}
             <br />
             <input
-              className="text-white bg-orange-400 cursor-pointer py-4 px-6 rounded-xl"
+              className="text-white bg-orange-400 cursor-pointer py-3 px-6 rounded-xl"
               type="submit"
               value="Add Bulletin"
             />
