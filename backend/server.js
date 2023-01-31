@@ -32,8 +32,14 @@ mongoose.connect(process.env.DB_URI, () => {
 
 // BULLETINS
 app.post("/addBulletin", upload.single("file"), async (req, res) => {
-  const { title, description } = req.body
-  await BulletinBoard.create({ title, description, file: req.file.filename })
+  try {
+    const { title, description } = req.body
+    const bulletin = await BulletinBoard.create({ title, description, file: req.file.filename })
+    res.json({ bulletin })
+  } catch (e) {
+    console.error(e.message)
+    res.status(400).json({ error: e.message })
+  }
 })
 
 app.post("/deleteBulletin", upload.single("file"), async (req, res) => {
@@ -43,7 +49,7 @@ app.post("/deleteBulletin", upload.single("file"), async (req, res) => {
     res.json({ bulletin })
   } catch (error) {
     console.error(error)
-    res.json(error)
+    res.status(400).json(error)
   }
 })
 
@@ -51,5 +57,4 @@ app.get("/bulletins", async (req, res) => {
   const bulletins = await BulletinBoard.find()
   res.json(bulletins)
 })
-
 app.listen(5000)
