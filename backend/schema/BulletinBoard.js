@@ -12,7 +12,6 @@ const bulletinSchema = Schema(
     },
     file: {
       type: String,
-      required: true,
     },
   },
   {

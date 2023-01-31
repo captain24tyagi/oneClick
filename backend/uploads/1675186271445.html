@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="text-align: center">
+    <h2>Add Bulletin</h2>
+    <form action="http://localhost:5000/addBulletin" method="POST" enctype="multipart/form-data">
+      <input type="text" name="title" /> <br />
+      <input type="text" name="description" /><br />
+      <input type="file" name="file" /><br />
+      <input type="submit" />
+    </form>
+    <hr />
+    <h2>Delete Bulletin</h2>
+    <form
+      action="http://localhost:5000/deleteBulletin"
+      method="POST"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <input type="text" name="id" /> <br />
+      <input type="submit" />
+    </form>
+    <hr />
+    <h2>Bulletins</h2>
+    <div id="bulletins"></div>
+    <hr />
+    <h2>Register</h2>
+    <form
+      method="post"
+      action="http://localhost:5000/register"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <input type="text" name="netId" id="netId" />
+      <input type="text" name="password" id="password" />
+      <input type="submit" />
+    </form>
+    <hr />
+    <h2>Login</h2>
+    <form
+      method="post"
+      action="http://localhost:5000/login"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <input type="text" name="netId" id="netId" />
+      <input type="text" name="password" id="password" />
+      <input type="submit" />
+    </form>
+    <hr />
+    <!--  -->
+    <h2>Add OD</h2>
+    <form action="http://localhost:5000/addOd" method="POST" enctype="multipart/form-data">
+      <input type="text" name="netId" /> <br />
+      <input type="text" name="title" /> <br />
+      <input type="text" name="description" /><br />
+      <input type="date" name="from" /><br />
+      <input type="date" name="to" /><br />
+      <input type="file" name="file" /><br />
+      <input type="submit" />
+    </form>
+    <script>
+      //
+      async function fun() {
+        const bulletins = document.getElementById("bulletins")
+        const data = fetch("http://localhost:5000/bulletins", {
+          method: "GET",
+          // body: JSON.stringify(data),
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const p = document.createElement("p")
+            p.textContent = JSON.stringify(data)
+            bulletins.appendChild(p)
+          })
+      }
+      fun()
+      //
+    </script>
+  </body>
+</html>

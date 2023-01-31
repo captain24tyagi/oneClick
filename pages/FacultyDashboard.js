@@ -10,7 +10,7 @@ function FacultyDashboard(props) {
             </h1>
 
             <div>
-                <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll'>
+                <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 scrollbar scrollbar-track-black/20 scrollbar-thumb-[#93C5FD]'>
                     <DashboardCard  name= "Soumil" title = "Attending A Conference" type = "OD"/>
                     <DashboardCard name = "Sarthak" title = "Severe Case of Asthma" type="ML"/>
                     <DashboardCard  name= "Ari" title= "Wiring Issues" type="HG"/>
