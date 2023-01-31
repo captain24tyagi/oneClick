@@ -9,7 +9,7 @@ function FacultyDashboard(props) {
                 Faculty Approval Dashboard
             </h1>
 
-            <div className=' bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7'>
+            <div className='bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7'>
                 <DashboardCard title = "Soumil"/>
                 <DashboardCard title = "Sarthak"/>
                 <DashboardCard title = "Ari"/>
