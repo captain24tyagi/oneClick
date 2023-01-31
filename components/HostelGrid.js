@@ -21,7 +21,7 @@ function HostelGrid() {
                     <div className='flex'>
                         <div>
                             <Link href='/electricity'>
-                            <img src="/Electricity.png" width={440} className="hover:animate-pulse"/>
+                                lmao<img src="/Electricity.png" width={440} className="hover:animate-pulse"/>
                             </Link>
                         </div>
                         <div>
