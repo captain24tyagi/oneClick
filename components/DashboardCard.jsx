@@ -7,7 +7,7 @@ function DashboardCard(props) {
         <h1 className="px-7 text-left py-3 w-fit text-xl font-bold text-white bg-orange-300">
           {props.type}
         </h1>
-        <h1 className=" px-7  py-3 w-[230px] text-center bg-blue-500 text-xl font-bold text-white">
+        <h1 className="px-7 py-3 w-[230px] text-center bg-blue-500 text-xl font-bold text-white">
           {props.netId}
         </h1>
       </div>
