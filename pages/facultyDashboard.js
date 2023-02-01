@@ -1,7 +1,38 @@
 import DashboardCard from "@/components/DashboardCard"
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
+
+import { useSignMessage } from "wagmi"
+import { verifyMessage } from "ethers/lib/utils"
 
 function facultyDashboard() {
+  const [odMls, setOdMls] = useState(null)
+
+  const recoveredAddress = useRef()
+
+  const { data, error, isLoading, signMessage } = useSignMessage({
+    onSuccess(data, variables) {
+      const address = verifyMessage(variables.message, data)
+      recoveredAddress.current = address
+    },
+  })
+
+  useEffect(() => {
+    fetch("http://localhost:5000/viewOdMls", {
+      method: "GET", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data)
+        setOdMls(data)
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
+  }, [])
+
   return (
     <div className='min-h-screen bg-[url("/imageb.png")]'>
       <div className=" flex-1 max-w-6xl mx-auto p-10">
@@ -11,34 +42,17 @@ function facultyDashboard() {
 
         <div>
           <div className=" bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll">
-            <DashboardCard
-              name="Soumil"
-              title="Attending A Conference"
-              type="OD"
-              filename="RR.png "
-              desc="nuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyguihjiogi8y8ihnuiyihohhhhhhhhhhhhhhhhhhhhhhguihjiogi8y8ih"
-            />
-            <DashboardCard
-              name="Sarthak"
-              title="Severe Case of Asthma"
-              type="ML"
-              filename="RR.png"
-              desc="bgfvytfuyguyfufu6f"
-            />
-            <DashboardCard
-              name="Aritra"
-              title="Wiring Issues"
-              type="HG"
-              filename="RR.png"
-              desc="bgfvytfuyguyfufu6f"
-            />
-            <DashboardCard
-              name="Nikhil"
-              title="Wiring Issues"
-              type="HG"
-              filename="RR.png"
-              desc="bgfvytfuyguyfufu6f"
-            />
+            {odMls &&
+              odMls.map((data) => (
+                <DashboardCard
+                  key={data._id}
+                  netId={data.netId}
+                  title={data.title}
+                  type={data.type}
+                  file={data.file}
+                  description={data.description}
+                />
+              ))}
           </div>
         </div>
       </div>
