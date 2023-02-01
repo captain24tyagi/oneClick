@@ -35,7 +35,7 @@ export default function Home() {
           {data &&
             data.map((data) => (
               <BulletinCard
-                key={data.id}
+                key={data._id}
                 title={data.title}
                 description={data.description}
                 file={data.file}
