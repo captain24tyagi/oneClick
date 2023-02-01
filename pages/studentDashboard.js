@@ -35,7 +35,7 @@ function studentDashboard() {
 
             {odMl &&
               odMl.map((data) => (
-                <HostelCard
+                <StudDashboardCard
                   key={data._id}
                   netId={data.netId}
                   title={data.title}
