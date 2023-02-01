@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-function studDashboardCard() {
+function StudDashboardCard(props) {
   return (
     <div className="w-fit bg-black/25  min-w-100  pb-10">
       <div className="flex flex-row  h-fit w-fill items-center justify-center rounded-t-lg ">
@@ -47,4 +47,4 @@ function studDashboardCard() {
   )
 }
 
-export default studDashboardCard;
+export default StudDashboardCard
