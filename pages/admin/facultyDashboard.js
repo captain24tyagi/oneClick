@@ -1,5 +1,7 @@
 import DashboardCard from "@/components/DashboardCard"
 import React, { useEffect, useRef, useState } from "react"
+// import nodemailer from "nodemailer"
+// import fs from "fs"
 
 import { useSignMessage } from "wagmi"
 import { verifyMessage } from "ethers/lib/utils"
@@ -39,7 +41,6 @@ function facultyDashboard() {
         <h1 className="px-7 text-left py-3 h-fit w-fit bg-blue-500 rounded-t-lg text-xl font-bold text-white scrollbar scrollbar-track-black/20 scrollbar-thumb-[#93C5FD]">
           Faculty Approval Dashboard
         </h1>
-
         <div>
           <div className=" bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll">
             {odMls &&
@@ -51,6 +52,7 @@ function facultyDashboard() {
                   type={data.type}
                   file={data.file}
                   description={data.description}
+                  hodApproved={data.hodApproved}
                 />
               ))}
           </div>

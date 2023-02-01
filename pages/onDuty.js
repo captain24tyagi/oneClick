@@ -1,6 +1,18 @@
 import React from "react"
+import { useSignMessage } from "wagmi"
+import { verifyMessage } from "ethers/lib/utils"
+import { useRef, useState } from "react"
 
 function onDuty() {
+  const recoveredAddress = useRef()
+  const [desc, setDesc] = useState("")
+  const { data, error, isLoading, signMessage } = useSignMessage({
+    onSuccess(data, variables) {
+      const address = verifyMessage(variables.message, data)
+      recoveredAddress.current = address
+    },
+  })
+
   return (
     <div className='h-full text-center items-center justify-between max-w-full py-20 px-10 bg-[url("/imageb.png")]'>
       <div className="items-center max-w-6xl mx-auto justify-center">
@@ -31,9 +43,11 @@ function onDuty() {
             Description
           </h2>
           <textarea
+            name="description"
+            onChange={(e) => setDesc(e.target.value)}
+            value={desc}
             className="containinput1"
             placeholder="Enter the description of On Duty application here"
-            name="description"
           />
 
           <h2 className=" px-2 text-left font-sans text-xl text-white font-semibold max-w-fit">
@@ -49,6 +63,13 @@ function onDuty() {
           </h2>
           <input name="file" className="containinput3" type="file" />
 
+          <button
+            onClick={() => signMessage({ message: desc })}
+            className="containinput5 mx-auto bg-blue-600 hover:bg-blue-600"
+            type="button"
+          >
+            Sign
+          </button>
           <button className="containinput5 mx-auto" type="submit">
             Submit for Review
           </button>

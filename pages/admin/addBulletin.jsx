@@ -1,4 +1,17 @@
+import { useSignMessage } from "wagmi"
+import { verifyMessage } from "ethers/lib/utils"
+import { useRef, useState } from "react"
+
 const addBulletin = () => {
+  const recoveredAddress = useRef()
+  const [desc, setDesc] = useState("")
+
+  const { data, error, isLoading, signMessage } = useSignMessage({
+    onSuccess(data, variables) {
+      const address = verifyMessage(variables.message, data)
+      recoveredAddress.current = address
+    },
+  })
   return (
     <div>
       <div className='h-full text-center items-center justify-between max-w-full py-10 px-10 bg-[url("/imageb.png")]'>
@@ -26,6 +39,8 @@ const addBulletin = () => {
             </h2>
             <textarea
               name="description"
+              onChange={(e) => setDesc(e.target.value)}
+              value={desc}
               className="containinput1"
               placeholder="Enter bulletin description"
             />
@@ -38,6 +53,13 @@ const addBulletin = () => {
               name="file"
             />{" "}
             <br />
+            <button
+              type="button"
+              className="text-white bg-blue-600 cursor-pointer py-3 px-6 rounded-xl mr-4"
+              onClick={() => signMessage({ message: desc })}
+            >
+              Sign
+            </button>
             <input
               className="text-white bg-orange-400 cursor-pointer py-3 px-6 rounded-xl"
               type="submit"
