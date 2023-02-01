@@ -1,4 +1,4 @@
-import studDashboardCard from "@/components/studDashboardCard"
+import StudDashboardCard from "@/components/StudDashboardCard"
 import React, { useEffect, useState } from "react"
 
 function studentDashboard() {
@@ -33,7 +33,7 @@ function studentDashboard() {
           <div className=" bg-black/25 min-h-screen rounded-t-lg p-10 flex gap-7 overflow-x-scroll ">
             {odMl &&
               odMl.map((data) => (
-                <studDashboardCard
+                <StudDashboardCard
                   key={data._id}
                   netId={data.netId}
                   title={data.title}
