@@ -37,8 +37,8 @@ function StudDashboardCard(props) {
         <button className="hover:bg-blue-400 bg-blue-500 h-[60px] w-[260px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium">
           Change Application
         </button>
-        <div className="flex flex-row m-auto w-[285px]">
-          <h1 className="hover:bg-green-400 bg-green-500 h-[50px] w-[120px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium ">
+        <div className="flex flex-row mx-auto w-[285px]">
+          <h1 className="hover:bg-green-400 bg-green-500 h-[50px] w-[120px] text-center items-center rounded-t-lg rounded-b-lg text-white text-[20px] font-medium">
             Status
           </h1>
         </div>
