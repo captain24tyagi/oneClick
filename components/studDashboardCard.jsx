@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 
-function DashboardCard(props) {
+function studDashboardCard() {
   return (
     <div className="w-fit bg-black/25  min-w-100  pb-10">
       <div className="flex flex-row  h-fit w-fill items-center justify-center rounded-t-lg ">
@@ -33,9 +33,18 @@ function DashboardCard(props) {
         </button>
       </div>
 
-     
+      <div className=" flex flex-col h-[200px] w-[285px] m-auto p-3 mt-3">
+        <button className="hover:bg-blue-400 bg-blue-500 h-[60px] w-[260px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium">
+          Change Application
+        </button>
+        <div className="flex flex-row m-auto w-[285px]">
+          <h1 className="hover:bg-green-400 bg-green-500 h-[50px] w-[120px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium ">
+            Status
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default DashboardCard
+export default studDashboardCard;

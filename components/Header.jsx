@@ -1,5 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit"
 import Link from "next/link"
+import Navbar from "./Navbar"
 
 const Header = () => {
   return (
@@ -13,8 +14,10 @@ const Header = () => {
         </h1>
       </div>
       </Link>
-     
+      <div className="flex flex-row items-center">
+      <Navbar/>
       <ConnectButton />
+      </div>
     </div>
   )
 }
