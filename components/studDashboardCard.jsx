@@ -1,6 +1,25 @@
 import React from "react"
 
 function StudDashboardCard(props) {
+  const onClick = async (netId) => {
+    const data = { netId }
+
+    fetch("http://localhost:5000/approve", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data)
+        setOdMl(data)
+      })
+      .catch((error) => {
+        console.error("Error:", error)
+      })
+  }
   return (
     <div className="w-fit bg-black/25  min-w-100  pb-10">
       <div className="flex flex-row  h-fit w-fill items-center justify-center rounded-t-lg ">
@@ -24,7 +43,11 @@ function StudDashboardCard(props) {
         <p className="text-white break-all p-3 overflow-hidden">{props.description}</p>
       </div>
 
-      <div className="mt-2 px-7 py-3 text-left">
+      <div className="mt-2 px-7 py-3 text-left text-white">
+        <h2>from:</h2>
+        <span>{new Date(props.from).toISOString().substring(0, 10)}</span>
+        <h2>to:</h2>
+        <span>{new Date(props.to).toISOString().substring(0, 10)}</span>
         <h1 className="text-white font-[90px] text-[23px] tracking-[1px]">Proof </h1>
       </div>
 
@@ -38,8 +61,12 @@ function StudDashboardCard(props) {
         <button className="hover:bg-blue-400 bg-blue-500 h-[60px] w-[260px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium">
           Review Application
         </button>
-        <h1 className=" text-center hover:bg-green-400 bg-green-500 h-[50px] w-[180px] rounded-t-lg rounded-b-lg text-white text-[22px] font-medium m-auto justify-center">
-          Status: {props.hodApproved ? "Approved" : "Review"}
+        <h1
+          className={`text-center ${
+            props.hodApproved ? "bg-green-500" : "bg-red-500"
+          }  w-[200px] rounded-t-lg rounded-b-lg text-white text-[22px] font-medium m-auto justify-center`}
+        >
+          Status: {props.hodApproved ? "Approved" : "Processing"}
         </h1>
       </div>
     </div>

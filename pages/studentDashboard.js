@@ -41,6 +41,8 @@ function studentDashboard() {
                   file={data.file}
                   description={data.description}
                   hodApproved={data.hodApproved}
+                  from={data.from}
+                  to={data.to}
                 />
               ))}
           </div>

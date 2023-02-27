@@ -9,6 +9,7 @@ require("dotenv").config()
 
 const BulletinBoard = require("./schema/BulletinBoard")
 const ODML = require("./schema/ODML")
+const Grievance = require("./schema/Grievance")
 
 const app = express()
 app.use(express.json())
@@ -112,6 +113,18 @@ app.post("/addOd", upload.single("file"), async (req, res) => {
   res.redirect("http://localhost:3000/studentDashboard")
 })
 
+app.post("/addGrievance", upload.single("file"), async (req, res) => {
+  const { title, description, netId, type } = req.body
+  await Grievance.create({
+    type,
+    netId,
+    title,
+    description,
+    file: req.file.filename,
+  })
+  res.redirect("http://localhost:3000/hostelDashboard")
+})
+
 // ML
 app.post("/addMl", upload.single("file"), async (req, res) => {
   try {
@@ -141,6 +154,17 @@ app.post("/viewOdMl", async (req, res) => {
   try {
     const { netId } = req.body
     const odml = await ODML.find({ netId })
+    res.json(odml)
+  } catch (error) {
+    console.error(error)
+    res.status(400).json(error)
+  }
+})
+
+app.post("/viewGrievances", async (req, res) => {
+  try {
+    const { netId } = req.body
+    const odml = await Grievance.find({ netId })
     res.json(odml)
   } catch (error) {
     console.error(error)
