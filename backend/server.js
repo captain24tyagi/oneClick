@@ -161,10 +161,9 @@ app.post("/viewOdMl", async (req, res) => {
   }
 })
 
-app.post("/viewGrievances", async (req, res) => {
+app.get("/viewGrievances", async (req, res) => {
   try {
-    const { netId } = req.body
-    const odml = await Grievance.find({ netId })
+    const odml = await Grievance.find()
     res.json(odml)
   } catch (error) {
     console.error(error)

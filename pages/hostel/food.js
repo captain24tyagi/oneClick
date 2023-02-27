@@ -8,7 +8,12 @@ function food() {
         <h1 className="px-7 text-left py-3 h-fit w-fit bg-orange-400 rounded-t-lg text-xl font-bold text-white">
           Food Grievances
         </h1>
-        <form className="p-10 bg-black/25 items-start rounded-b-lg">
+        <form
+          encType="multipart/form-data"
+          action="http://localhost:5000/addGrievance"
+          method="POST"
+          className="p-10 bg-black/25 items-start rounded-b-lg"
+        >
           <h2 className=" px-2 text-left font-sans text-xl text-white font-semibold max-w-fit">
             netId
           </h2>
@@ -35,7 +40,7 @@ function food() {
           <h2 className=" px-2 text-left font-sans text-xl text-white font-semibold max-w-fit mb-4">
             Upload documents of proof
           </h2>
-          <input className="containinput3" type="file" />
+          <input className="containinput3" type="file" name="file" />
 
           <button
             className="mt-10 outline-none bg-orange-400 hover:bg-orange-600 rounded-md border-b w-[700px] font-sans font-medium px-7 py-5 border-[black] text-white placeholder-gray-100"

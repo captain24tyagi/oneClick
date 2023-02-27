@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from "react"
 import { useSignMessage } from "wagmi"
 import { verifyMessage } from "ethers/lib/utils"
-import WardenCard from '@/components/WardenCard'
+import WardenCard from "@/components/WardenCard"
 
 function wardenDashboard() {
-
   const [odMls, setOdMls] = useState(null)
 
   const recoveredAddress = useRef()
@@ -17,7 +16,7 @@ function wardenDashboard() {
   })
 
   useEffect(() => {
-    fetch("http://localhost:5000/viewOdMls", {
+    fetch("http://localhost:5000/viewGrievances", {
       method: "GET", // or 'PUT'
       headers: {
         "Content-Type": "application/json",

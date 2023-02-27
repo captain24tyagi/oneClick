@@ -13,6 +13,10 @@ function DashboardCard(props) {
     },
   })
 
+  const approve = async () => {
+    // await fetch()
+  }
+
   return (
     <div className="w-fit bg-black/25  min-w-100  pb-10">
       <div className="flex flex-row  h-fit w-fill items-center justify-center rounded-t-lg ">
@@ -51,6 +55,7 @@ function DashboardCard(props) {
         <button
           className="hover:bg-blue-400 bg-blue-500 h-[60px] w-[260px] rounded-t-lg rounded-b-lg text-white text-[20px] font-medium"
           disabled={props.hodApproved}
+          onClick={(id) => approve(id)}
         >
           Approve
         </button>
